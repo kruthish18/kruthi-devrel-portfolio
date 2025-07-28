@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kruthi Hegde - Developer Relations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .navbar {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e5e5;
+            position: sticky;
+            top: 2rem;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #2d3748;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.8rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .story-section {
+            margin-bottom: 2rem;
+        }
+
+        .story-text {
+            font-style: italic;
+            color: #4a5568;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e5e5;
+        }
+
+        .links-section {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .link-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e5e5;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            min-width: 140px;
+        }
+
+        .link-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .link-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .experience-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e5e5;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2d3748;
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .experience-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.2s ease;
+            background: #fefefe;
+        }
+
+        .experience-item:hover {
+            border-color: #cbd5e0;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .exp-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .exp-company {
+            color: #4a5568;
+            font-weight: 500;
+            margin-top: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .exp-date {
+            color: #718096;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .exp-description {
+            color: #4a5568;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .education-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e5e5;
+        }
+
+        .education-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .degree {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.2rem;
+        }
+
+        .university {
+            color: #4a5568;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+            @media (max-width: 768px) {
+                .nav-content {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                
+                .nav-links {
+                    gap: 1rem;
+                }
+
+                .container {
+                padding: 1rem;
+            }
+
+            .name {
+                font-size: 2.2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .links-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .link-box {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .exp-header {
+                flex-direction: column;
+            }
+
+            .exp-date {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 class="name">KRUTHI HEGDE</h1>
+            <p class="tagline">Developer Experience Engineer building interactive tools and growing developer ecosystems through storytelling and hands-on demos</p>
+        </div>
+
+        <!-- Story Section -->
+        <div class="story-section">
+            <div class="story-text">
+                                    "Back in 2018, in Bangalore India, I made videos on teaching Data Structures and Algorithms. I enjoyed teaching and explaining complex topics to others. Throughout my career, I've always loved teaching - whether it was breaking down algorithms for students or creating engaging content. I built a food and lifestyle blog alongside my software engineering work, discovering my passion for content marketing and community building. This unique combination of technical expertise, teaching passion, and content creation naturally led me to Developer Relations. I identify as a developer marketer - someone who bridges the gap between complex technical concepts and the developers who need to understand them."
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links-section">
+            <a href="https://medium.com/@kruthish18" class="link-box" target="_blank">
+                <span class="link-icon">📝</span>
+                <div class="link-title">Medium</div>
+            </a>
+            <a href="https://linkedin.com/in/kruthihegde" class="link-box" target="_blank">
+                <span class="link-icon">💼</span>
+                <div class="link-title">LinkedIn</div>
+            </a>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="experience-section">
+            <h2 class="section-title">DevRel Experience</h2>
+            <div class="experience-grid">
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">AI Instructional UX Researcher</div>
+                            <div class="exp-company">CATLR, Northeastern University</div>
+                        </div>
+                        <div class="exp-date">Jan 2025 – May 2025</div>
+                    </div>
+                    <div class="exp-description">
+                        Created AI-powered guides and interactive demos to help students understand LLMs, translating complex technical workflows into beginner-friendly visual explainers and tutorials.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Lead Graduate Teaching Assistant</div>
+                            <div class="exp-company">Northeastern University</div>
+                        </div>
+                        <div class="exp-date">Sep 2024 – May 2025</div>
+                    </div>
+                    <div class="exp-description">
+                        Provided technical guidance to 120+ students on Data Structures and Algorithms, conducting one-on-one sessions to clarify doubts, debug code, and enhance learning through personalized mentorship.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Software Engineer Intern (Developer-Focused)</div>
+                            <div class="exp-company">Mercari Inc.</div>
+                        </div>
+                        <div class="exp-date">Jan 2024 – Sep 2024</div>
+                    </div>
+                    <div class="exp-description">
+                        Built interactive UI components and created detailed developer documentation, bridging the gap between technical implementation and product narrative for engineering teams.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Product Marketing Manager</div>
+                            <div class="exp-company">Aspiring Product Managers Club, Northeastern</div>
+                        </div>
+                        <div class="exp-date">Sep 2024 – Mar 2025</div>
+                    </div>
+                    <div class="exp-description">
+                        Scaled a tech community by 465+ members through video content and technical newsletters, simplifying complex product concepts through authentic storytelling.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Software Engineer 2</div>
+                            <div class="exp-company">Rakuten</div>
+                        </div>
+                        <div class="exp-date">Jan 2020 – Dec 2022</div>
+                    </div>
+                    <div class="exp-description">
+                        Built user-centric interfaces using MERN stack and conducted extensive user research, translating technical insights into engagement improvements and enhanced developer experience.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Content Creator & Co-founder</div>
+                            <div class="exp-company">@Fab_Explorers</div>
+                        </div>
+                        <div class="exp-date">Jan 2020 – Dec 2022</div>
+                    </div>
+                    <div class="exp-description">
+                        Co-founded and created 100+ food and lifestyle content pieces, growing to 25K+ followers and 1M+ views through engaging storytelling and consistent community building.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Technical Educator</div>
+                            <div class="exp-company">Unacademy</div>
+                        </div>
+                        <div class="exp-date">2018</div>
+                    </div>
+                    <div class="exp-description">
+                        Taught Data Structures and Algorithms lessons, breaking down complex computational concepts into digestible content for students through video-based learning.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="education-section" id="education">
+            <div class="education-item">
+                <div class="degree">M.S. Computer Software Engineering (2023-2025)</div>
+                <div class="university">Northeastern University, Boston</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">B.E. Computer Science (2016-2020)</div>
+                <div class="university">Bangalore University, India</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
