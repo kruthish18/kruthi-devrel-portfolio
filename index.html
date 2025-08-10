@@ -110,24 +110,23 @@
         }
 
         .links-section {
-            display: flex;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
             justify-content: center;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
         }
 
         .link-box {
             background: white;
             border-radius: 8px;
-            padding: 1rem 1.5rem;
+            padding: 1.5rem 2rem;
             text-align: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             border: 1px solid #e5e5e5;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             text-decoration: none;
             color: inherit;
-            min-width: 140px;
         }
 
         .link-box:hover {
@@ -142,9 +141,43 @@
         }
 
         .link-title {
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #4a5568;
+            margin-bottom: 0.3rem;
+        }
+
+        .link-desc {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        .project-links {
+            margin-top: 0.8rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 0.8rem;
+        }
+
+        .project-link {
+            display: block;
+            color: #4a5568;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .project-link:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #718096;
+        }
+
+        .project-link:hover {
+            color: #2d3748;
+            text-decoration: underline;
         }
 
         .experience-section {
@@ -301,13 +334,17 @@
 
         <!-- Links Section -->
         <div class="links-section">
-            <a href="https://medium.com/@kruthish18" class="link-box" target="_blank">
+            <a href="#" class="link-box" target="_blank">
                 <span class="link-icon">📝</span>
                 <div class="link-title">Medium</div>
             </a>
-            <a href="https://linkedin.com/in/kruthihegde" class="link-box" target="_blank">
+            <a href="https://linkedin.com/in/kruthi-hegde" class="link-box" target="_blank">
                 <span class="link-icon">💼</span>
                 <div class="link-title">LinkedIn</div>
+            </a>
+            <a href="https://drive.google.com/file/d/1oDvzdQ51_p-a7uR5szJ0QgHXsNjKoeGj/view?usp=drive_link" class="link-box" target="_blank">
+                <span class="link-icon">📑</span>
+                <div class="link-title">Resume</div>
             </a>
         </div>
 
@@ -326,6 +363,10 @@
                     </div>
                     <div class="exp-description">
                         Created AI-powered guides and interactive demos to help students understand LLMs, translating complex technical workflows into beginner-friendly visual explainers and tutorials.
+                        <div class="project-links">
+                            <a href="https://learning.northeastern.edu/ai-student-guides-tailoring_resumes-and-interview-practice" target="_blank" class="project-link">AI Student Guide – Prompting strategies for Claude and ChatGPT</a>
+                            <a href="https://camd.northeastern.edu/camd-ai-projects-showcase" target="_blank" class="project-link">AI Projects Showcase Website – Built site and content for CAMD faculty initiative</a>
+                        </div>
                     </div>
                 </div>
 
@@ -365,6 +406,10 @@
                     </div>
                     <div class="exp-description">
                         Scaled a tech community by 465+ members through video content and technical newsletters, simplifying complex product concepts through authentic storytelling.
+                        <div class="project-links">
+                            <a href="https://www.instagram.com/reel/DBCC2lWuOFO" target="_blank" class="project-link">Event storytelling reel - Scripted and edited</a>
+                            <a href="https://www.instagram.com/reel/DB9mtfpyPXz" target="_blank" class="project-link">Community engagement reel - Full production</a>
+                        </div>
                     </div>
                 </div>
 
@@ -390,7 +435,12 @@
                         <div class="exp-date">Jan 2020 – Dec 2022</div>
                     </div>
                     <div class="exp-description">
-                        Co-founded and created 100+ food and lifestyle content pieces, growing to 25K+ followers and 1M+ views through engaging storytelling and consistent community building.
+                        Co-founded and created 100+ food and lifestyle content pieces, growing to 28K+ followers and 1M+ views through engaging storytelling and consistent community building. Prior to moving to the U.S., this creative experience deeply influenced my understanding of audience engagement and content tone.
+                        <div class="project-links">
+                            <a href="https://www.instagram.com/fab_explorers" target="_blank" class="project-link">Fab Explorers Blog – Main page (paused in 2022)</a>
+                            <a href="https://www.instagram.com/reel/CV7tpxeod6w/?igsh=MW45enQ4d2QzYmNsNg" target="_blank" class="project-link">1.3M+ Views – Restaurant collaboration reel</a>
+                            <a href="https://www.instagram.com/p/CVxUFN1vXU3/?igsh=dHJ5emkxY3FyZnJ4" target="_blank" class="project-link">4K+ Likes – Photography post</a>
+                        </div>
                     </div>
                 </div>
 
